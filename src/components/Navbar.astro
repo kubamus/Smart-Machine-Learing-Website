@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../../public/Logo.png";
+import NavbarButton from "../../public/menu.svg";
+const links = [
+  { name: "Our Services", path: "#services" },
+  { name: "About Us", path: "#about" },
+  { name: "Plans", path: "#plans" },
+  { name: "Why Us", path: "#why-us" },
+  { name: "Contact Us", path: "#contact" },
+];
+---
+
+<nav id="navbar">
+  <div id="navbar__logo">
+    <Image loading={"eager"} src={Logo} alt={"logo"} />
+  </div>
+  <input type="checkbox" id="navbar__toggleButton" />
+  <div id="navbar__links">
+    {
+      links.map((link) => {
+        return <a href={link.path}>{link.name}</a>;
+      })
+    }
+  </div>
+  <label for="navbar__toggleButton" id="navbar__toggleButtonLabel">
+    <Image src={NavbarButton} alt={"Open navbar"} />
+  </label>
+</nav>
+
+<style lang="scss">
+  @import "../_variables.scss";
+  #navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $navbarHeight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: rgba($background, 0.75);
+    z-index: 999999999999;
+  }
+  #navbar__logo {
+    display: inline-block;
+    height: auto;
+    width: 75px;
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+  #navbar__toggleButton {
+    display: none;
+  }
+  #navbar__toggleButtonLabel {
+    display: none;
+  }
+  #navbar__links {
+    display: flex;
+    gap: 20px;
+    z-index: 999999999998;
+
+    a {
+      text-decoration: none;
+      color: $text;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    #navbar {
+      background: none;
+    }
+    #navbar__logo {
+      display: none;
+    }
+    #navbar__toggleButtonLabel {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      border-radius: 50px;
+      background-color: $background;
+      box-shadow: 0 0 10px rgba($accent, 1);
+      width: 60px;
+      height: 60px;
+      bottom: 10px;
+      right: 10px;
+      z-index: 999999999999999999;
+      cursor: pointer;
+      &:active {
+        transform: scale(0.9);
+      }
+      img {
+        width: 35px;
+        height: auto;
+        // fill: $accent;
+      }
+    }
+    #navbar__links {
+      background-color: $background;
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s;
+    }
+    #navbar__toggleButton:checked ~ #navbar__links {
+      transform: translateX(0);
+    }
+  }
+</style>

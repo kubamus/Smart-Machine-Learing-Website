@@ -1,0 +1,204 @@
+---
+import { Image } from "astro:assets";
+import landingImage from "../../../public/home/landing-image.svg";
+
+// load persons
+import landingPersonPicture1 from "../../../public/home/pers1.jpg";
+import landingPersonPicture2 from "../../../public/home/pers2.jpg";
+import landingPersonPicture3 from "../../../public/home/pers3.jpg";
+import landingPersonPicture4 from "../../../public/home/pers4.jpg";
+---
+
+<section id="landingSect">
+  <div id="landingSect__content">
+    <h1 id="landingSect__content__title"></h1>
+    <p id="landingSect_content_paragraph"></p>
+    <button>Schedule a Consultation</button>
+    <div id="landingSect__people">
+      <div id="landingSect__people__images">
+        <Image src={landingPersonPicture1} alt={"Person 1"} />
+        <Image src={landingPersonPicture2} alt={"Person 2"} />
+        <Image src={landingPersonPicture3} alt={"Person 3"} />
+        <Image src={landingPersonPicture4} alt={"Person 4"} />
+      </div>
+      <div id="landingSect__people__text">4567+ Satisfied Clients</div>
+    </div>
+  </div>
+  <div id="landingSect__image">
+    <Image
+      loading={"eager"}
+      src={landingImage}
+      alt={"Artifitial inteligence"}
+    />
+  </div>
+</section>
+<script>
+  import typeWriter from "../../lib/typeWriter.js";
+  typeWriter(
+    "AI-Powered Solutions for a Smarter Tomorrow",
+    "landingSect__content__title",
+    45
+  );
+  typeWriter(
+    "Start today, secure tomorrow",
+    "landingSect_content_paragraph",
+    45,
+    undefined,
+    "smooth"
+  );
+</script>
+
+<style lang="scss">
+  @import "../../_variables.scss";
+  // fadein
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes shake {
+    0% {
+      transform: rotate(4deg) translateY(3px);
+    }
+    20% {
+      transform: rotate(-4deg) translateY(-3px);
+    }
+    40% {
+      transform: rotate(4deg) translateY(3px);
+    }
+    60% {
+      transform: rotate(-4deg) translateY(-3px);
+    }
+    80% {
+      transform: rotate(4deg) translateY(3px);
+    }
+    100% {
+      transform: rotate(0deg) translateY(0px);
+    }
+  }
+
+  //
+  #landingSect {
+    min-height: calc(100dvh - $navbarHeight);
+    padding-inline: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      min-height: 50px;
+      margin: 0;
+    }
+    p {
+      min-height: 20px;
+      margin: 0;
+    }
+    button {
+      background-color: $primary;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 25px;
+      // color: $background;
+      cursor: pointer;
+      transition:
+        background-color 0.125s,
+        scale 0.125s;
+    }
+    button:hover {
+      background-color: $secondary;
+    }
+    button:active {
+      background-color: darken($secondary, 10%);
+      scale: 0.95;
+    }
+    div {
+      flex: 1;
+      display: flex;
+    }
+  }
+  #landingSect__content {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    h1 {
+      font-size: 2.5rem;
+      max-width: 530px;
+    }
+    p {
+      color: #444444;
+    }
+  }
+  #landingSect__image {
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 25px;
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  #landingSect__people {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  #landingSect__people__images {
+    margin-left: 10px;
+    img {
+      margin-left: -10px;
+      border-radius: 50%;
+      width: 50px;
+      height: auto;
+      outline: 6px solid #fff;
+      transition: transform 0.2s;
+    }
+    img:hover {
+      animation: shake 0.5s;
+    }
+  }
+  #landingSect__people__images img:nth-child(1) {
+    z-index: 1;
+  }
+  #landingSect__people__images img:nth-child(2) {
+    z-index: 2;
+  }
+  #landingSect__people__images img:nth-child(3) {
+    z-index: 3;
+  }
+  #landingSect__people__images img:nth-child(4) {
+    z-index: 4;
+  }
+  #landingSect__people__text {
+    font-size: 15px;
+    color: #444444;
+  }
+  @media screen and (max-width: 1200px) {
+    #landingSect {
+      padding-inline: 50px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    #landingSect {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #landingSect {
+      padding-inline: 10px;
+
+      #landingSect__image {
+        flex: 0;
+        width: 100%;
+      }
+    }
+  }
+</style>

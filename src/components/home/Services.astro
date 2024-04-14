@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+
+//
+import services__card__image__1 from "../../../public/services/ai.svg";
+import services__card__image__2 from "../../../public/services/design.svg";
+import services__card__image__3 from "../../../public/services/programming.svg";
+---
+
+<section id="services">
+  <div id="services__cards">
+    <div class="services__card">
+      <div class="services__card_top">
+        <Image
+          src={services__card__image__1}
+          alt={"Programming head"}
+          class="services__card__image"
+        />
+        <h2 class="services__card__title">Fine-Tuning</h2>
+      </div>
+      <p>
+        We provide fine-tuning services for AI models. We can help you to
+        improve the accuracy of your AI models.
+      </p>
+    </div>
+    <div class="services__card">
+      <div class="services__card_top">
+        <Image
+          src={services__card__image__2}
+          alt={"Design head"}
+          class="services__card__image"
+        />
+        <h2 class="services__card__title">Design</h2>
+      </div>
+      <p>
+        We provide design services for your projects. We can help you to design
+        your website, mobile app, or any other project.
+      </p>
+    </div>
+    <div class="services__card">
+      <div class="services__card_top">
+        <Image
+          src={services__card__image__3}
+          alt={"Programming head"}
+          class="services__card__image"
+        />
+        <h2 class="services__card__title">Programming</h2>
+      </div>
+      <p>
+        We provide programming services for your projects. We can help you to
+        develop your website, mobile app, or any other project.
+      </p>
+    </div>
+    <style lang="scss">
+      @import "../../_variables.scss";
+      #services {
+        padding: 2rem;
+        text-align: center;
+        h1 {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+      #services__cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+      .services__card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        max-width: 490px;
+        background-color: $primary;
+        box-shadow: 0 0 1rem rgba($accent, 0.1);
+        transition: transform 0.3s;
+        &:hover {
+          transform: translateY(-0.5rem) scale(1.02);
+        }
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+        p {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+      .services__card_top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+      }
+      .services__card__image {
+        width: 150px;
+        height: auto;
+      }
+      @media screen and (max-width: 1400px) {
+        .services__card {
+          max-width: 350px;
+        }
+      }
+      @media screen and (max-width: 1275px) {
+        .services__card {
+          h1 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+        }
+        .services__card__image {
+          width: 100px;
+        }
+        #services__cards {
+          flex-direction: column;
+        }
+        .services__card {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </div>
+</section>
