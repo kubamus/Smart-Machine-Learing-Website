@@ -21,7 +21,9 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
         <Image src={landingPersonPicture3} alt={"Person 3"} />
         <Image src={landingPersonPicture4} alt={"Person 4"} />
       </div>
-      <div id="landingSect__people__text">4567+ Satisfied Clients</div>
+      <div id="landingSect__people__text">
+        <span id="landingSect__people__text__number"></span>+ Satisfied Clients
+      </div>
     </div>
   </div>
   <div id="landingSect__image">
@@ -33,7 +35,7 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
   </div>
 </section>
 <script>
-  import { typeWriter } from "../../lib/typeWriter.js";
+  import { typeWriter, randomNumberEffect } from "../../lib/lib";
   typeWriter(
     "AI-Powered Solutions for a Smarter Tomorrow",
     "landingSect__content__title",
@@ -46,6 +48,7 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
     undefined,
     "smooth"
   );
+  randomNumberEffect(4567, "landingSect__people__text__number", 1244, 50, 37);
 </script>
 
 <style lang="scss">

@@ -44,6 +44,14 @@ const links = [
     padding-inline: 20px;
     background-color: rgba($background, 0.75);
     z-index: 999999999999;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(5px);
+
+      z-index: -1;
+    }
   }
   #navbar__logo {
     display: inline-block;
@@ -74,6 +82,9 @@ const links = [
   @media screen and (max-width: 750px) {
     #navbar {
       background: none;
+      &::before {
+        backdrop-filter: none;
+      }
     }
     #navbar__logo {
       display: none;
