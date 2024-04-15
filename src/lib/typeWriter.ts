@@ -43,4 +43,4 @@ const typeWriter = (
   }
 };
 
-export default typeWriter;
+export { typeWriter };

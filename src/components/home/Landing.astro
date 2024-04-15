@@ -33,7 +33,7 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
   </div>
 </section>
 <script>
-  import typeWriter from "../../lib/typeWriter.js";
+  import { typeWriter } from "../../lib/typeWriter.js";
   typeWriter(
     "AI-Powered Solutions for a Smarter Tomorrow",
     "landingSect__content__title",
@@ -81,6 +81,12 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
   }
 
   //
+  #landingSect__content__title {
+    min-height: 100px;
+    margin: 0;
+    font-size: 2.5rem;
+    max-width: 530px;
+  }
   #landingSect {
     min-height: calc(100dvh - $navbarHeight);
     padding-inline: 150px;
@@ -88,10 +94,7 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    h1 {
-      min-height: 50px;
-      margin: 0;
-    }
+
     p {
       min-height: 20px;
       margin: 0;
@@ -124,10 +127,7 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
     flex-direction: column;
     align-items: start;
     gap: 20px;
-    h1 {
-      font-size: 2.5rem;
-      max-width: 530px;
-    }
+    width: 100%;
     p {
       color: #444444;
     }
@@ -190,6 +190,16 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
       flex-direction: column;
       gap: 50px;
     }
+    #landingSect__content__title {
+      width: 100%;
+      text-align: center;
+    }
+    #landingSect__content__paragraph {
+      text-align: center;
+    }
+    #landingSect__content {
+      align-items: center;
+    }
   }
   @media screen and (max-width: 600px) {
     #landingSect {
@@ -199,6 +209,17 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
         flex: 0;
         width: 100%;
       }
+    }
+  }
+
+  @media screen and (max-width: 498px) {
+    #landingSect__content__title {
+      min-height: 150px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    #landingSect__content__title {
+      min-height: 200px;
     }
   }
 </style>
