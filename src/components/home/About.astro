@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import ImageAboutUs from "../../../public/aboutus/aboutus.svg";
+---
+
+<section id="about">
+  <h2 id="about__title">About Us</h2>
+  <div id="about__content">
+    <div class="about__content__element">
+      <Image src={ImageAboutUs} alt={"Team"} />
+    </div>
+    <div class="about__content__element about__content__element__text">
+      <p>
+        We are <span>Smart Machine Learning (SML)</span>, a small tech company
+        that lives and breathes technology. Our team is a diverse group of
+        passionate individuals who are not just experts in their respective
+        fields, but also enthusiasts who love what they do.
+      </p>
+      <p>
+        At <span>SML</span>, we believe in pushing the boundaries of what's
+        possible. We are innovators, thinkers, and problem solvers. We are
+        driven by our passion for machine learning and our commitment to making
+        a difference in the world of technology.
+      </p>
+      <p>
+        Our journey is fueled by our desire to create solutions that not only
+        meet the needs of our clients but also exceed their expectations. We are
+        not just a team, we are a family united by our shared passion for
+        technology and innovation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../../_variables.scss";
+  #about__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  #about__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 50px;
+    span {
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+  .about__content__element {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+    }
+    &.about__content__element__text {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 840px) {
+    #about__content {
+      flex-direction: column;
+      padding: 32px;
+    }
+    .about__content__element {
+      margin-bottom: 32px;
+    }
+  }
+</style>
