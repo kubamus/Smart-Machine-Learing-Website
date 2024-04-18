@@ -1,0 +1,93 @@
+<section id="whyus">
+  <div class="container">
+    <h2>Why Choose SML</h2>
+    <p>
+      At SML, we are committed to providing top-notch services with a focus on
+      customer satisfaction, quality, and innovation.
+    </p>
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-check-circle"></i>
+        <h3>Quality</h3>
+        <p>
+          We pride ourselves on the high quality of our products and services.
+          Our team ensures every detail is perfect, from design to delivery.
+        </p>
+      </div>
+      <div class="col">
+        <i class="fas fa-check-circle"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>
+          Our customers are at the heart of everything we do. We strive to
+          exceed your expectations and ensure you're delighted with our service.
+        </p>
+      </div>
+      <div class="col">
+        <i class="fas fa-check-circle"></i>
+        <h3>Innovation</h3>
+        <p>
+          We are always looking for ways to innovate and improve. We embrace new
+          ideas and technologies to stay at the forefront of our industry.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<style lang="scss">
+  @import "../../_variables.scss";
+  #whyus {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+
+  #whyus .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #whyus .container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  #whyus .container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  #whyus .container .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #whyus .container .row .col {
+    // flex: 1;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  #whyus .container .row .col i {
+    font-size: 3rem;
+    color: #007bff;
+  }
+
+  #whyus .container .row .col h3 {
+    color: $primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  #whyus .container .row .col p {
+    font-size: 1rem;
+  }
+</style>

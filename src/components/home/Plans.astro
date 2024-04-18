@@ -1,0 +1,102 @@
+<setion id="plans">
+  <h2 id="plans__title">Plans</h2>
+  <div id="plans__table__wrapper">
+    <table id="plans__table">
+      <tr>
+        <th><span>COMPARE ALL PLANS</span></th>
+        <th><span>ENTERPRISE</span><br />(SEO + SMO + PAID)</th>
+        <th><span>ADVANCE</span><br />(SEO + SMO)</th>
+        <th><span>STARTER</span><br />(SEO + SMO)</th>
+      </tr>
+      <tr>
+        <td>1st Month Management Cost</td>
+        <td>$ 1200</td>
+        <td>$ 900</td>
+        <td>$ 400</td>
+      </tr>
+      <tr>
+        <td>Following Month</td>
+        <td class="plans__table__specialRowItems">$ 900</td>
+        <td class="plans__table__specialRowItems">$ 700</td>
+        <td class="plans__table__specialRowItems">$ 300</td>
+      </tr>
+      <tr>
+        <td>Delivery Time frame</td>
+        <td>3-6 Months</td>
+        <td>3-6 Months</td>
+        <td>3-6 Months</td>
+      </tr>
+      <tr>
+        <td>Total Targeted Keywords</td>
+        <td>40</td>
+        <td>30</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Guranteed Keywords Ranking in First Page of Google</td>
+        <td>28</td>
+        <td>20</td>
+        <td>18</td>
+      </tr>
+    </table>
+  </div>
+</setion>
+
+<style lang="scss">
+  @import "../../_variables.scss";
+  #plans__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    color: $primary;
+  }
+  #plans__table__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  #plans__table {
+    border-collapse: collapse;
+    th,
+    td,
+    tr {
+      color: $text;
+    }
+
+    th {
+      color: white;
+      padding: 16px;
+      text-align: center;
+      background-color: $primary;
+      &:first-child {
+        text-align: left;
+        background-color: transparent;
+        color: $text;
+      }
+    }
+    td {
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    .plans__table__specialRowItems {
+      font-size: 1.5rem;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+  @media screen and (max-width: 920px) {
+    #plans__table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      td,
+      th {
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+      .plans__table__specialRowItems {
+        font-size: 1.2rem;
+      }
+    }
+  }
+</style>

@@ -38,7 +38,7 @@ import ImageAboutUs from "../../../public/aboutus/aboutus.svg";
     text-align: center;
     font-size: 2rem;
     margin-bottom: 32px;
-    color: $accent;
+    color: $primary;
   }
   #about__content {
     display: flex;
@@ -47,7 +47,11 @@ import ImageAboutUs from "../../../public/aboutus/aboutus.svg";
     gap: 50px;
     span {
       font-weight: 700;
-      color: $accent;
+      color: $primary;
+      transition: text-shadow 0.3s;
+      &:hover {
+        text-shadow: 0 0 2px $primary;
+      }
     }
   }
   .about__content__element {
