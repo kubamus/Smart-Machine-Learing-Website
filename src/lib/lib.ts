@@ -49,32 +49,4 @@ const typeWriter = (
   }
 };
 
-const randomNumberEffect = (
-  finalNumber: number,
-  elementId: string,
-  duration: number,
-  speed: number,
-  width: number,
-  onEnd?: () => void
-) => {
-  let i = 0;
-  const element = document.getElementById(elementId);
-  if (element) {
-    element.style.width = width + "px";
-    // Every 5ms, generate a random number and insert it in place of the element. As the last number generated, generate finalNumber. Effect should last for duration ms.
-    const randomNumberEffectInterval = setInterval(() => {
-      if (i < duration / speed) {
-        element.innerHTML = Math.floor(Math.random() * finalNumber).toString();
-        i++;
-      } else {
-        clearInterval(randomNumberEffectInterval);
-        element.innerHTML = finalNumber.toString();
-        if (typeof onEnd === "function") {
-          onEnd();
-        }
-      }
-    }, speed);
-  }
-};
-
-export { typeWriter, randomNumberEffect };
+export { typeWriter };

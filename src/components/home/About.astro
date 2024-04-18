@@ -3,13 +3,16 @@ import { Image } from "astro:assets";
 import ImageAboutUs from "../../../public/aboutus/aboutus.svg";
 ---
 
-<section id="about">
-  <h2 id="about__title">About Us</h2>
+<section id="about" itemscope itemtype="http://schema.org/Corporation">
+  <h2 id="about__title" itemprop="name">About Us</h2>
   <div id="about__content">
     <div class="about__content__element">
       <Image src={ImageAboutUs} alt={"Team"} />
     </div>
-    <div class="about__content__element about__content__element__text">
+    <div
+      class="about__content__element about__content__element__text"
+      itemprop="description"
+    >
       <p>
         We are <span>Smart Machine Learning (SML)</span>, a small tech company
         that lives and breathes technology. Our team is a diverse group of

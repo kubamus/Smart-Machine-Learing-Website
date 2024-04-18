@@ -9,17 +9,42 @@ import landingPersonPicture3 from "../../../public/home/pers3.jpg";
 import landingPersonPicture4 from "../../../public/home/pers4.jpg";
 ---
 
-<section id="landingSect">
-  <div id="landingSect__content">
-    <h1 id="landingSect__content__title"></h1>
-    <p id="landingSect_content_paragraph"></p>
-    <button>Schedule a Consultation</button>
+<section id="landingSect" itemscope itemtype="http://schema.org/WebPage">
+  <div id="landingSect__content" itemprop="mainContentOfPage">
+    <h1 id="landingSect__content__title" itemprop="headline"></h1>
+    <p id="landingSect_content_paragraph" itemprop="text"></p>
+    <button
+      itemprop="potentialAction"
+      itemscope
+      itemtype="http://schema.org/Action">Schedule a Consultation</button
+    >
     <div id="landingSect__people">
-      <div id="landingSect__people__images">
-        <Image src={landingPersonPicture1} alt={"Person 1"} />
-        <Image src={landingPersonPicture2} alt={"Person 2"} />
-        <Image src={landingPersonPicture3} alt={"Person 3"} />
-        <Image src={landingPersonPicture4} alt={"Person 4"} />
+      <div
+        id="landingSect__people__images"
+        itemprop="image"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <Image
+          src={landingPersonPicture1}
+          alt={"Person 1"}
+          itemprop="contentUrl"
+        />
+        <Image
+          src={landingPersonPicture2}
+          alt={"Person 2"}
+          itemprop="contentUrl"
+        />
+        <Image
+          src={landingPersonPicture3}
+          alt={"Person 3"}
+          itemprop="contentUrl"
+        />
+        <Image
+          src={landingPersonPicture4}
+          alt={"Person 4"}
+          itemprop="contentUrl"
+        />
       </div>
       <div id="landingSect__people__text">
         <span id="landingSect__people__text__number">4567</span>+ Satisfied
@@ -27,16 +52,22 @@ import landingPersonPicture4 from "../../../public/home/pers4.jpg";
       </div>
     </div>
   </div>
-  <div id="landingSect__image">
+  <div
+    id="landingSect__image"
+    itemprop="primaryImageOfPage"
+    itemscope
+    itemtype="http://schema.org/ImageObject"
+  >
     <Image
       loading={"eager"}
       src={landingImage}
       alt={"Artifitial inteligence"}
+      itemprop="contentUrl"
     />
   </div>
 </section>
 <script>
-  import { typeWriter, randomNumberEffect } from "../../lib/lib";
+  import { typeWriter } from "../../lib/lib";
   typeWriter(
     "AI-Powered Solutions for a Smarter Tomorrow",
     "landingSect__content__title",
